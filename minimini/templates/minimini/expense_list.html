@@ -1,0 +1,14 @@
+{% extends 'minimini/base.html' %} {% block content %}
+<h1>These are your expenses:</h1>
+<h3>Click for details -or- Add new Expense</h3>
+<ul>
+  {% for expense in expenses %}
+  <li>
+    <a href="{% url 'expense_detail' pk=expense.pk %}">
+      {{ expense.month}}: {{ expense.title }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<h4><a href="{% url 'expense_create' %}">Add a New Expense</a></h4>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'minimini/base.html' %} {% block content %}
+<h1>These are your incomes:</h1>
+<h3>Click for details -or- Add new Income</h3>
+<ul>
+  {% for income in incomes %}
+  <li>
+    <a href="{% url 'income_detail' pk=income.pk %}">
+      {{ income.month}}: {{ income.title }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<h4><a href="{% url 'income_create' %}">Add a New Income</a></h4>
+{% endblock %}

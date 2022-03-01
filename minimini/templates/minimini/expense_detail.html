@@ -1,0 +1,11 @@
+{% extends 'minimini/base.html' %} {% block content %}
+<h2> The {{ expense.title }} bill:</h2>
+<p>For the month of: {{ expense.month }}</p>
+<p>{{expense.title }} cost you ${{expense.cost}}</p>
+
+
+<h4> <a href="{% url 'expense_edit' pk=expense.pk %}">Edit this data</a></h4>
+<h4><a href="{% url 'expense_delete' pk=expense.pk %}">Delete this data</a></h4>
+
+<h3>OR add a NEW expense ---> <a href="{% url 'expense_create' %}">here</a></h3>
+{% endblock %}

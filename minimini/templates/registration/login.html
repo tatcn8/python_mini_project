@@ -1,0 +1,11 @@
+<h1>Log In</h1>
+<h3><a href="/">Home</a></h3>
+<h5>-or-</h5>
+<h3><a href="{% url 'signup' %}">Sign Up</a></h3>
+<!-- Add the login form -->
+<form method="POST" action="{% url 'login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" class="btn" value="login">
+  <input type="hidden" name="next" value="{{ next }}">
+</form>

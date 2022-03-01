@@ -1,0 +1,11 @@
+{% extends 'minimini/base.html' %} {% block content %}
+<h2>Income from {{ income.title }}:</h2>
+<p>For the month of: {{ income.month }}</p>
+<p>{{income.earner_name}} earned ${{income.value}} at {{income.title}}</p>
+
+
+<h4> <a href="{% url 'income_edit' pk=income.pk %}">Edit this data</a></h4>
+<h4><a href="{% url 'income_delete' pk=income.pk %}">Delete this data</a></h4>
+
+<h3>OR add a NEW income ---> <a href="{% url 'income_create' %}">here</a></h3>
+{% endblock %}

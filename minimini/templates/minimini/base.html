@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+  <head>
+    <title>Budget App lol</title>
+    <link rel="stylesheet" href="{% static 'css/minimini.css' %}" />
+  </head>
+  <body>
+    <h1>Welcome to the Monthly Financial Data App</h1>
+    <h4>(It's not that great lol)</h4>
+    <nav>
+      {% if user.is_authenticated %}
+        <a href="/">Home</a>
+        <a href="/incomes">Income</a>
+        <a href="/expenses">Expenses</a>
+        <a href="{% url 'logout' %}">Log Out</a>
+    </nav>
+      {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+      {% endif %}
+    {% block content %} {% endblock %}
+  </body>
+</html>
